@@ -28,7 +28,14 @@ function ShoppingList() {
   }, []);
 
   function handleUpdateItem(updatedItem) {
-    console.log("In ShoppingCart: ", updatedItem);
+    const updatedItems = items.map(item => {
+      if (item.id === updatedItem.id) {
+        return updatedItem;
+      } else {
+        return item;
+      }
+    });
+    setItems(updatedItems);
   }
 
   return (
